@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: comefess_api_development
+
+test:
+  <<: *default
+  database: comefess_api_test
+
+production:
+  <<: *default
+  database: comefess_api_production
